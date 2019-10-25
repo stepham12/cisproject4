@@ -12,6 +12,16 @@ namespace cis237_assignment4
             // Create a user interface and pass the droidCollection into it as a dependency
             UserInterface userInterface = new UserInterface(droidCollection);
 
+            //Hard-Coded Droids to test program
+            droidCollection.Add("Carbonite", "Red", false, false, true, false, 10);
+            droidCollection.Add("Carbonite","White", 5);
+            droidCollection.Add("Carbonite", "Green", false, false, true);
+            droidCollection.Add("Quadranium", "Blue", true, true, false, true, false);
+            droidCollection.Add("Vanadium", "Red", 2);
+            droidCollection.Add("Quadranium", "Blue", true, true, false);
+            droidCollection.Add("Vanadium", "Green", false, false, true, false, true);
+            droidCollection.Add("Quadranium", "White", true, true, false, true, 5);
+
             // Display the main greeting for the program
             userInterface.DisplayGreeting();
 
