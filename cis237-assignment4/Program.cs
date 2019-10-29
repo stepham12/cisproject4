@@ -31,8 +31,8 @@ namespace cis237_assignment4
             // Get the choice that the user makes
             int choice = userInterface.GetMenuChoice();
 
-            // While the choice is not equal to 3, continue to do work with the program
-            while (choice != 3)
+            // While the choice is not equal to 5, continue to do work with the program
+            while (choice != 5)
             {
                 // Test which choice was made
                 switch (choice)
@@ -44,6 +44,18 @@ namespace cis237_assignment4
 
                     // Choose to Print the droid
                     case 2:
+                        userInterface.PrintDroidList();
+                        break;
+
+                    // Choose to sort by Model
+                    case 3:
+                        droidCollection.Categorize();
+                        userInterface.PrintDroidList();
+                        break;
+
+                    // Choose to sort by Total Cost
+                    case 4:
+                        //Merge sort
                         userInterface.PrintDroidList();
                         break;
                 }

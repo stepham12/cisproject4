@@ -28,7 +28,9 @@ namespace cis237_assignment4
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
-            Console.WriteLine("3. Exit the program");
+            Console.WriteLine("3. Sort by model");
+            Console.WriteLine("4. Sort by total cost");
+            Console.WriteLine("5. Exit the program");
         }
 
         // Method to get a menu choice

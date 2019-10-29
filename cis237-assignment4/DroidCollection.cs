@@ -11,6 +11,75 @@ namespace cis237_assignment4
         // Private variable to hold the length of the Collection
         private int lengthOfCollection;
 
+        //Create an instance for generic ProtocolStack linked list
+        ProtocolStack<IDroid> protocolStack = new ProtocolStack<IDroid>();
+        JanitorStack<IDroid> janitorStack = new JanitorStack<IDroid>();
+        AstromechStack<IDroid> astromechStack = new AstromechStack<IDroid>();
+        UtilityStack<IDroid> utilityStack = new UtilityStack<IDroid>();
+        Queue<IDroid> queue = new Queue<IDroid>();
+
+        public void Categorize()
+        {
+            //Determine droid type and push onto appropriate stack
+            foreach (IDroid droid in droidCollection)
+            {
+                if (droid is ProtocolDroid)
+                {
+                    protocolStack.Push(droid);
+                }
+
+                else if (droid is JanitorDroid)
+                {
+                    janitorStack.Push(droid);
+                }
+
+                else if (droid is AstromechDroid)
+                {
+                    astromechStack.Push(droid);
+                }
+
+                else if (droid is UtilityDroid)
+                {
+                    utilityStack.Push(droid);
+                }
+            }
+
+            //Pop Droids off Stack and enqueue them in Queue
+            while(!protocolStack.IsEmpty)
+            {
+                IDroid droid = protocolStack.Pop();
+                queue.Enqueue(droid);
+            }
+
+            while (!janitorStack.IsEmpty)
+            {
+                IDroid droid = janitorStack.Pop();
+                queue.Enqueue(droid);
+            }
+
+            while (!astromechStack.IsEmpty)
+            {
+                IDroid droid = astromechStack.Pop();
+                queue.Enqueue(droid);
+            }
+
+            while (!utilityStack.IsEmpty)
+            {
+                IDroid droid = utilityStack.Pop();
+                queue.Enqueue(droid);
+            }
+
+            // replace the original array of droids with the droids in the queue
+            int counter = 0;
+            while (!queue.IsEmpty)
+            {
+                IDroid droid = queue.Dequeue();
+                droidCollection[counter] = droid;
+                counter++;
+            }
+
+        }
+
         // Constructor that takes in the size of the collection.
         // It sets the size of the internal array that will be used.
         // It also sets the length of the collection to zero since nothing is added yet.
