@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237_assignment4
 {
-    class JanitorStack<T>
+    class GenericQueue<T>
     {
         //Make node class in inner class
         protected class Node
@@ -40,32 +40,36 @@ namespace cis237_assignment4
             }
         }
 
-        //Add to front to push onto stack
-        public void Push(T Data)
+        //Add to back to enqueue
+        public void Enqueue(T Data)
         {
-            //Make a new variable to also point to the head of the list
-            Node oldHead = _head;
-            //Make a new node and assign it to the head variable
-            _head = new Node();
-            //Set the date on the new Node
-            _head.Data = Data;
-            //Make the next property of the new node point to the old head
-            _head.Next = oldHead;
-            //Increment the size of the list
-            _size++;
-            //Ensure that if we are adding the very first node to the list
-            // that the tail will be pointing to the new node we created. 
-            if (_size == 1)
-            {
-                _tail = _head;
+            // Make a pointer to the tail called old tail
+            Node oldTail = _tail;
+            //Make a new variable and assign it to the tail pointer
+            _tail = new Node();
+            //Assign the date and set the next point
+            _tail.Data = Data;
+            _tail.Next = null; //Not needed technically.
 
+            //Check to see if the list is empty
+            //If so, make the head point to the same location as the tail. 
+            if (IsEmpty) //Can check IsEmpty because size not incremented yet.
+            {
+                _head = _tail;
             }
+            //We need to take the oldTail and make its Next property point
+            //to the tail that we just created.
+            else
+            {
+                oldTail.Next = _tail;
+            }
+            _size++;
         }
 
-        //Remove from front to pop from stack
-        public T Pop()
+        //Remove from front to dequeue
+        public T Dequeue()
         {
-            //If it is empty trhow an error
+            //If it is empty throw an error
             if (IsEmpty)
             {
                 throw new Exception("List is empty");
@@ -86,5 +90,6 @@ namespace cis237_assignment4
 
             return returnData;
         }
+
     }
 }

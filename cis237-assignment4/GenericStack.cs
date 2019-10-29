@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237_assignment4
 {
-    class AstromechStack<T>
+    class GenericStack <T>
     {
         //Make node class in inner class
         protected class Node

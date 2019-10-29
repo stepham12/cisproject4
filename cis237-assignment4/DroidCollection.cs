@@ -12,11 +12,11 @@ namespace cis237_assignment4
         private int lengthOfCollection;
 
         //Create an instance for generic ProtocolStack linked list
-        ProtocolStack<IDroid> protocolStack = new ProtocolStack<IDroid>();
-        JanitorStack<IDroid> janitorStack = new JanitorStack<IDroid>();
-        AstromechStack<IDroid> astromechStack = new AstromechStack<IDroid>();
-        UtilityStack<IDroid> utilityStack = new UtilityStack<IDroid>();
-        Queue<IDroid> queue = new Queue<IDroid>();
+        GenericStack<IDroid> protocolStack = new GenericStack<IDroid>();
+        GenericStack<IDroid> janitorStack = new GenericStack<IDroid>();
+        GenericStack<IDroid> astromechStack = new GenericStack<IDroid>();
+        GenericStack<IDroid> utilityStack = new GenericStack<IDroid>();
+        GenericQueue<IDroid> queue = new GenericQueue<IDroid>();
 
         public void Categorize()
         {
