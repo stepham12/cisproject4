@@ -22,7 +22,7 @@ namespace cis237_assignment4
             Console.WriteLine();
         }
 
-        // Method to display the main menu
+        // Method to display the main menu 
         public void DisplayMainMenu()
         {
             Console.WriteLine("What would you like to do?");

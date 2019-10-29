@@ -49,7 +49,9 @@ namespace cis237_assignment4
 
                     // Choose to sort by Model
                     case 3:
+                        //Call method to sort droids
                         droidCollection.Categorize();
+                        //Print list with results
                         userInterface.PrintDroidList();
                         break;
 
