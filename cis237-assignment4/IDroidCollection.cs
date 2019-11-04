@@ -17,5 +17,8 @@ namespace cis237_assignment4
 
         //Method to sort droids by category.
         void Categorize();
+
+        //Method to sort droids by total cost.
+        void SortByTotalCost();
     }
 }

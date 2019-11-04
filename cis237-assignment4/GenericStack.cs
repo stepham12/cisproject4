@@ -16,9 +16,8 @@ namespace cis237_assignment4
         }
 
         // Class variables for maintaining the linked list
-        // Head and Tail are pointers to an object of Node
+        // Head is a pointer to an object of Node
         protected Node _head;
-        protected Node _tail;
         protected int _size;
 
         public bool IsEmpty
@@ -53,13 +52,6 @@ namespace cis237_assignment4
             _head.Next = oldHead;
             //Increment the size of the list
             _size++;
-            //Ensure that if we are adding the very first node to the list
-            // that the tail will be pointing to the new node we created. 
-            if (_size == 1)
-            {
-                _tail = _head;
-
-            }
         }
 
         //Remove from front to pop from stack
@@ -78,11 +70,6 @@ namespace cis237_assignment4
 
             //Decrease the size
             _size--;
-            // Check to see if we just removed the last node from the list
-            if (IsEmpty)
-            {
-                _tail = null;
-            }
 
             return returnData;
         }

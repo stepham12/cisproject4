@@ -8,15 +8,20 @@ namespace cis237_assignment4
     {
         // Private variable to hold the collection of droids
         private IDroid[] droidCollection;
+        //Private variable to hold the collection of subarray of droids without nulls
+        private IDroid[] droidCollectionSubArray;
         // Private variable to hold the length of the Collection
         private int lengthOfCollection;
 
-        //Create an instance for generic ProtocolStack linked list
+        //Create instances for generic stacks and queue
         GenericStack<IDroid> protocolStack = new GenericStack<IDroid>();
         GenericStack<IDroid> janitorStack = new GenericStack<IDroid>();
         GenericStack<IDroid> astromechStack = new GenericStack<IDroid>();
         GenericStack<IDroid> utilityStack = new GenericStack<IDroid>();
         GenericQueue<IDroid> queue = new GenericQueue<IDroid>();
+
+        //Create instance for MergeSort
+        MergeSort mergeSort = new MergeSort();
 
         public void Categorize()
         {
@@ -45,7 +50,7 @@ namespace cis237_assignment4
             }
 
             //Pop Droids off Stack and enqueue them in Queue
-            while(!protocolStack.IsEmpty)
+            while (!protocolStack.IsEmpty)
             {
                 IDroid droid = protocolStack.Pop();
                 queue.Enqueue(droid);
@@ -78,6 +83,46 @@ namespace cis237_assignment4
                 counter++;
             }
 
+            Console.WriteLine();
+            Console.Write("Droids sorted by Model. Print list to see sorted list.");
+            Console.WriteLine();
+        }
+
+        public void SortByTotalCost()
+        {
+            // Private variable to hold the subarray of droids without nulls
+            droidCollectionSubArray = new IDroid[lengthOfCollection];
+            int counter = 0;
+            // For each droid in the droidCollection
+            foreach (IDroid droid in droidCollection)
+            {
+                // If the droid is not null (It might be since the array may not be full)
+                if (droid != null)
+                {
+                    // Calculate the total cost of the droid.
+                    droid.CalculateTotalCost();
+                    droidCollectionSubArray[counter] = droid;
+                    counter++;
+                }
+            }
+
+            //Perform merge sort to sort by Total Cost
+            mergeSort.Sort(droidCollectionSubArray);
+
+            foreach (IDroid droid in droidCollectionSubArray)
+            {
+                Console.WriteLine(droid.ToString());
+                Console.WriteLine("Total Cost: " + droid.TotalCost.ToString("C") + Environment.NewLine);
+            }
+
+
+            //Return sorted sub array into original droidCollection array
+            //int counter2 = 0;
+            //foreach (IDroid droid in droidCollectionSubArray)
+            //{
+            //    droidCollection[counter2] = droid;
+            //    counter++;
+            //}
         }
 
         // Constructor that takes in the size of the collection.

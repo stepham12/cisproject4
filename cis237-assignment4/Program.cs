@@ -51,14 +51,12 @@ namespace cis237_assignment4
                     case 3:
                         //Call method to sort droids
                         droidCollection.Categorize();
-                        //Print list with results
-                        userInterface.PrintDroidList();
                         break;
 
                     // Choose to sort by Total Cost
                     case 4:
                         //Merge sort
-                        userInterface.PrintDroidList();
+                        droidCollection.SortByTotalCost();
                         break;
                 }
                 // Re-display the menu, and re-prompt for the choice

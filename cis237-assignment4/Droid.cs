@@ -17,6 +17,17 @@ namespace cis237_assignment4
         protected decimal baseCost;
         protected decimal totalCost;
 
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            Droid otherDroid = obj as Droid;
+            if (otherDroid != null)
+                return this.totalCost.CompareTo(otherDroid.totalCost);
+            else
+                throw new ArgumentException("Object is not a Droid");
+        }
+
         // Create a inner class for the sole purpose of acting like a collection of constants
         public sealed class Materials
         {
