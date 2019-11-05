@@ -121,7 +121,7 @@ namespace cis237_assignment4
             }
 
             Console.WriteLine();
-            Console.Write("Droids sorted by Model. Print list to see sorted list.");
+            Console.Write("Droids sorted by Total Cost. Print list to see sorted list.");
             Console.WriteLine();
             Console.WriteLine();
         }

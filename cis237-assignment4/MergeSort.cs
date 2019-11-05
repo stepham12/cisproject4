@@ -39,15 +39,14 @@ namespace cis237_assignment4
         private void Sort(IComparable[] a, IComparable[] aux, int lo, int hi)
         {
             if (hi <= lo)
-            {
                 return;
-            }
             int mid = lo + (hi - lo) / 2;
-            Sort(a, aux, lo, mid);
-            Sort(a, aux, mid + 1, hi);
+            Sort(a, aux, lo, mid); //left half
+            Sort(a, aux, mid + 1, hi); //right half
             Merge(a, aux, lo, mid, hi);
         }
 
+        //Takes in IComparable array to be sorted
         public void Sort(IComparable[] a)
         {
             IComparable[] aux = new IComparable[a.Length];
