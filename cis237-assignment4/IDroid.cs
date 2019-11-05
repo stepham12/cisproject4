@@ -1,5 +1,9 @@
 ﻿using System;
 
+//Stephanie Amo
+//Project 4
+//Due: 11/05/2019
+
 namespace cis237_assignment4
 {
     interface IDroid : IComparable

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//Stephanie Amo
+//Project 4
+//Due: 11/05/2019
 
 namespace cis237_assignment4
 {
@@ -10,8 +13,6 @@ namespace cis237_assignment4
     {
         private void Merge(IComparable[] a, IComparable[] aux, int lo, int mid, int hi)
         {
-            int i = lo;
-            int j = mid + 1;
 
             //copy the whole array
             for(int k = lo; k<=hi; k++)
@@ -19,24 +20,19 @@ namespace cis237_assignment4
                 aux[k] = a[k];
             }
 
+            int i = lo;
+            int j = mid + 1;
+
             for (int k = lo; k <= hi; k++)
             {
                 if (i > mid)
-                {
                     a[k] = aux[j++];
-                }
                 else if (j > hi)
-                {
                     a[k] = aux[i++];
-                }
-                else if (a[j].CompareTo(a[i]) < 1)
-                {
+                else if (a[j].CompareTo(a[i]) < 0)
                     a[k] = aux[j++];
-                }
                 else
-                {
                     a[k] = aux[i++];
-                }
             }
         }
 

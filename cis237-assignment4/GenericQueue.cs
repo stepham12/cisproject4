@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Stephanie Amo
+//Project 4
+//Due: 11/05/2019
+
 namespace cis237_assignment4
 {
     class GenericQueue<T>

@@ -1,5 +1,9 @@
 ﻿using System;
 
+//Stephanie Amo
+//Project 4
+//Due: 11/05/2019
+
 namespace cis237_assignment4
 {
     class Program
@@ -18,7 +22,7 @@ namespace cis237_assignment4
             droidCollection.Add("Carbonite", "Green", false, false, true);
             droidCollection.Add("Quadranium", "Blue", true, true, false, true, false);
             droidCollection.Add("Vanadium", "Red", 2);
-            droidCollection.Add("Quadranium", "Blue", true, true, false);
+            droidCollection.Add("Quadranium", "Blue", true, true, true);
             droidCollection.Add("Vanadium", "Green", false, false, true, false, true);
             droidCollection.Add("Quadranium", "White", true, true, false, true, 5);
 

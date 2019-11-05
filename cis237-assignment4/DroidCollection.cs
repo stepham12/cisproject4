@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
+//Stephanie Amo
+//Project 4
+//Due: 11/05/2019
+
 namespace cis237_assignment4
 {
     class DroidCollection : IDroidCollection
@@ -86,6 +90,7 @@ namespace cis237_assignment4
             Console.WriteLine();
             Console.Write("Droids sorted by Model. Print list to see sorted list.");
             Console.WriteLine();
+            Console.WriteLine();
         }
 
         public void SortByTotalCost()
@@ -96,7 +101,7 @@ namespace cis237_assignment4
             // For each droid in the droidCollection
             foreach (IDroid droid in droidCollection)
             {
-                // If the droid is not null (It might be since the array may not be full)
+                // If the droid is not null
                 if (droid != null)
                 {
                     // Calculate the total cost of the droid.
@@ -109,20 +114,16 @@ namespace cis237_assignment4
             //Perform merge sort to sort by Total Cost
             mergeSort.Sort(droidCollectionSubArray);
 
-            foreach (IDroid droid in droidCollectionSubArray)
+            //Put sorted sub array into original droidCollection array
+            for (int i = 0; i<droidCollectionSubArray.Length; i++)
             {
-                Console.WriteLine(droid.ToString());
-                Console.WriteLine("Total Cost: " + droid.TotalCost.ToString("C") + Environment.NewLine);
+                droidCollection[i] = droidCollectionSubArray[i];
             }
 
-
-            //Return sorted sub array into original droidCollection array
-            //int counter2 = 0;
-            //foreach (IDroid droid in droidCollectionSubArray)
-            //{
-            //    droidCollection[counter2] = droid;
-            //    counter++;
-            //}
+            Console.WriteLine();
+            Console.Write("Droids sorted by Model. Print list to see sorted list.");
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
         // Constructor that takes in the size of the collection.

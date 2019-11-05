@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
+//Stephanie Amo
+//Project 4
+//Due: 11/05/2019
+
 namespace cis237_assignment4
 {
     abstract class Droid : IDroid
